@@ -1,0 +1,17 @@
+.idea/
+.ruff_cache/
+.venv/
+.vscode/
+__pycache__/
+
+.dockerignore
+.editorconfig
+.gitignore
+.python-version
+development.http
+docker-compose.yml
+Dockerfile
+http-client.env.json
+pyproject.toml
+README.md
+uv.lock

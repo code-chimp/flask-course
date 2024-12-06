@@ -1,0 +1,66 @@
+### Get stores
+GET {{host}}/store
+
+### Add item to store
+POST {{host}}/store/Also%20My%20Store/item
+Content-Type: application/json
+
+{
+  "name": "Table",
+  "price": 100.37
+}
+
+### Create store
+POST {{host}}/store
+Content-Type: application/json
+
+{
+  "name": "Also My Store"
+}
+
+### Create user (admin)
+POST {{host}}/register
+Content-Type: application/json
+
+{
+  "username": "grand-poobah",
+  "password": "p@ssw0rd"
+}
+
+### Create user (standard)
+POST {{host}}/register
+Content-Type: application/json
+
+{
+  "username": "hodor",
+  "password": "S33kr1t"
+}
+
+### Login admin
+POST {{host}}/login
+Content-Type: application/json
+
+{
+  "username": "grand-poobah",
+  "password": "p@ssw0rd"
+}
+
+> {%
+    client.global.set("auth_token", response.body.token);
+%}
+
+### Delete (deactivate) user
+DELETE {{host}}/users/db2f245f-90f0-4b05-a64f-fc1d7d72c22b
+Authorization: Bearer {{auth_token}}
+Content-Type: application/json
+
+### Create publisher
+POST {{host}}/api/publishers
+Authorization: Bearer {{auth_token}}
+Content-Type: application/json
+
+{
+  "name": "note stuff app"
+}
+
+
